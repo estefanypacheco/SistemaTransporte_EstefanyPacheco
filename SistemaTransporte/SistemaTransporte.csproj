@@ -52,10 +52,141 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmFacturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmFacturacion.Designer.cs">
+      <DependentUpon>FrmFacturacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmAnularFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmAnularFactura.Designer.cs">
+      <DependentUpon>FrmAnularFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmBusquedaChoferFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmBusquedaChoferFactura.Designer.cs">
+      <DependentUpon>FrmBusquedaChoferFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmBusquedaClienteFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmBusquedaClienteFactura.Designer.cs">
+      <DependentUpon>FrmBusquedaClienteFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmBusquedaServicioFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmBusquedaServicioFactura.Designer.cs">
+      <DependentUpon>FrmBusquedaServicioFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmBusquedaTransporteClienteFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmBusquedaTransporteClienteFactura.Designer.cs">
+      <DependentUpon>FrmBusquedaTransporteClienteFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmChoferesGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmChoferesGestion.Designer.cs">
+      <DependentUpon>FrmChoferesGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmClientesGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmClientesGestion.Designer.cs">
+      <DependentUpon>FrmClientesGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmEmpresa.Designer.cs">
+      <DependentUpon>FrmEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmRecuperarContrasennia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmRecuperarContrasennia.Designer.cs">
+      <DependentUpon>FrmRecuperarContrasennia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmServiciosGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmServiciosGestion.Designer.cs">
+      <DependentUpon>FrmServiciosGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmSobreSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmSobreSistema.Designer.cs">
+      <DependentUpon>FrmSobreSistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmTransportesGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmTransportesGestion.Designer.cs">
+      <DependentUpon>FrmTransportesGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmUsuariosGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmUsuariosGestion.Designer.cs">
+      <DependentUpon>FrmUsuariosGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Herramientas.cs" />
+    <Compile Include="ObjetosGlobales.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmFacturacion.resx">
+      <DependentUpon>FrmFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmChoferesGestion.resx">
+      <DependentUpon>FrmChoferesGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmClientesGestion.resx">
+      <DependentUpon>FrmClientesGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmEmpresa.resx">
+      <DependentUpon>FrmEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmRecuperarContrasennia.resx">
+      <DependentUpon>FrmRecuperarContrasennia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmServiciosGestion.resx">
+      <DependentUpon>FrmServiciosGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmSobreSistema.resx">
+      <DependentUpon>FrmSobreSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmTransportesGestion.resx">
+      <DependentUpon>FrmTransportesGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmUsuariosGestion.resx">
+      <DependentUpon>FrmUsuariosGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -65,6 +196,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -84,6 +216,15 @@
       <Project>{08056bd5-3a2a-4546-bca0-587745a3eef8}</Project>
       <Name>Logica</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Locales\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroud fond login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,12 +12,15 @@ namespace Logica.Models
 
         public int IDUsuarioRol { get; set; }
         public string RolUsuario { get; set; }
-        public string DescripcionRol { get; set; }
 
 
         public DataTable ListarRolUsuario()
         {
             DataTable R = new DataTable();
+
+            Conexion MiCnn = new Conexion();
+
+            R = MiCnn.HacerSelect("SPUsuarioRolListar");
 
             return R;
         }
