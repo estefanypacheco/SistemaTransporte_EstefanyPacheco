@@ -49,12 +49,12 @@ namespace SistemaTransporte.Formularios
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.DgvListaTransportes = new System.Windows.Forms.DataGridView();
-            this.CbVerActivos = new System.Windows.Forms.CheckBox();
             this.CIDTransporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CNombreTransporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPlacaTransporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CDescripcionTransporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CIDTransporteTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CbVerActivos = new System.Windows.Forms.CheckBox();
             this.GbDetalles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaTransportes)).BeginInit();
             this.SuspendLayout();
@@ -255,19 +255,6 @@ namespace SistemaTransporte.Formularios
             this.DgvListaTransportes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaTransportes_CellClick);
             this.DgvListaTransportes.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgvListaTransportes_DataBindingComplete);
             // 
-            // CbVerActivos
-            // 
-            this.CbVerActivos.AutoSize = true;
-            this.CbVerActivos.Checked = true;
-            this.CbVerActivos.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CbVerActivos.Location = new System.Drawing.Point(836, 19);
-            this.CbVerActivos.Name = "CbVerActivos";
-            this.CbVerActivos.Size = new System.Drawing.Size(204, 24);
-            this.CbVerActivos.TabIndex = 24;
-            this.CbVerActivos.Text = "Ver Transportes Activos";
-            this.CbVerActivos.UseVisualStyleBackColor = true;
-            this.CbVerActivos.CheckedChanged += new System.EventHandler(this.CbVerActivos_CheckedChanged);
-            // 
             // CIDTransporte
             // 
             this.CIDTransporte.DataPropertyName = "IDTransporte";
@@ -313,6 +300,19 @@ namespace SistemaTransporte.Formularios
             this.CIDTransporteTipo.ReadOnly = true;
             this.CIDTransporteTipo.Width = 150;
             // 
+            // CbVerActivos
+            // 
+            this.CbVerActivos.AutoSize = true;
+            this.CbVerActivos.Checked = true;
+            this.CbVerActivos.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CbVerActivos.Location = new System.Drawing.Point(836, 19);
+            this.CbVerActivos.Name = "CbVerActivos";
+            this.CbVerActivos.Size = new System.Drawing.Size(204, 24);
+            this.CbVerActivos.TabIndex = 24;
+            this.CbVerActivos.Text = "Ver Transportes Activos";
+            this.CbVerActivos.UseVisualStyleBackColor = true;
+            this.CbVerActivos.CheckedChanged += new System.EventHandler(this.CbVerActivos_CheckedChanged);
+            // 
             // FrmTransportesGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -329,6 +329,7 @@ namespace SistemaTransporte.Formularios
             this.Controls.Add(this.DgvListaTransportes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmTransportesGestion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Transportes";
             this.Load += new System.EventHandler(this.FrmTransportesGestion_Load);
             this.GbDetalles.ResumeLayout(false);

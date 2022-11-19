@@ -11,14 +11,8 @@ namespace Logica.Models
     {
 
         //Atributos Simples
-        private int idFacturaTipo;
+        public int IDFacturaTipo { get; set; }
 
-        public int IDFacturaTipo
-        {
-            get {return idFacturaTipo; }
-            set { idFacturaTipo = value;}   
-
-        }
 
         //propiedad de forma simplicada
         public string TipoFactura { get; set; }
@@ -28,10 +22,12 @@ namespace Logica.Models
         {
             DataTable R = new DataTable();
 
+            Conexion MiCnn = new Conexion();
+
+            R = MiCnn.HacerSelect("SPFacturaTipoListar");
+
             return R;
         }
-
-
 
     }
 }

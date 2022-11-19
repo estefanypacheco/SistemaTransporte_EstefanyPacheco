@@ -31,6 +31,19 @@ namespace Logica.Models
 
         }
 
+        public DataTable ListarEmpresaDetalle()
+        {
+
+            DataTable R = new DataTable();
+
+            Conexion MiCnn1 = new Conexion();
+
+            R = MiCnn1.HacerSelect("SPEmpresaListar2");
+
+            return R;
+
+        }
+
 
 
     }

@@ -19,12 +19,12 @@ namespace Logica.Models
 
         //composiciones simples
 
-        FacturaTipo MiTipo { get; set; }
-        Empresa MiEmpresa { get; set; }
-        Cliente MiCliente { get; set; }
-        Usuario MiUsuario { get; set; }
-        Transporte MiTransporte { get; set; }
-        Chofer MiChofer { get; set; } 
+        public FacturaTipo MiTipo { get; set; }
+        public Empresa MiEmpresa { get; set; }
+        public Cliente MiCliente { get; set; }
+        public Usuario MiUsuario { get; set; }
+        public Transporte MiTransporte { get; set; }
+        public Chofer MiChofer { get; set; }
 
         //composicion multiple
         public List<FacturaDetalle> DetalleItems { get; set; }
@@ -34,7 +34,7 @@ namespace Logica.Models
         {
             MiTipo = new FacturaTipo();
             MiEmpresa = new Empresa();
-            MiCliente = new Cliente(); 
+            MiCliente = new Cliente();
             MiUsuario = new Usuario();
             MiTransporte = new Transporte();
             MiChofer = new Chofer();
@@ -103,6 +103,20 @@ namespace Logica.Models
 
             decimal R = 0;
             //asignar valores a los decimales de arriba
+        }
+
+        public DataTable AsignarEsquemaDetalle() { 
+
+            DataTable R = new DataTable();
+
+            Conexion MiCnn = new Conexion();
+
+            R = MiCnn.HacerSelect("SPFacturaDetalleEsquema", true);
+
+            R.PrimaryKey = null;
+
+
+            return R;
         }
 
     }

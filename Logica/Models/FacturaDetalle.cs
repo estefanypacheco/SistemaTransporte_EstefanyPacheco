@@ -26,5 +26,7 @@ namespace Logica.Models
 
         }
 
+
+
     }
 }
