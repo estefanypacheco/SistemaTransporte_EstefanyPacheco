@@ -327,6 +327,7 @@ namespace SistemaTransporte.Formularios
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.GbDetalles);
             this.Controls.Add(this.DgvListaTransportes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmTransportesGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

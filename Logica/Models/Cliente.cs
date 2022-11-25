@@ -184,6 +184,21 @@ namespace Logica.Models
             return R;
         }
 
+        public DataTable BuscarCliente(bool VerActivos = true, string Filtro = "")
+        {
+
+            DataTable R = new DataTable();
+
+            Conexion MiCnn = new Conexion();
+
+            MiCnn.ListadoDeParametros.Add(new SqlParameter("@Filtro", Filtro));
+
+            R = MiCnn.HacerSelect("SPClientesBuscar");
+
+            return R;
+        }
+
+
         public bool ConsultarPorEmail()
         {
             bool R = false;

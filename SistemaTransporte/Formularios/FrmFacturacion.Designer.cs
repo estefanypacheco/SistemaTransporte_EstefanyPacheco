@@ -30,7 +30,7 @@ namespace SistemaTransporte.Formularios
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFacturacion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.BtnCancelar = new System.Windows.Forms.Button();
@@ -55,6 +55,13 @@ namespace SistemaTransporte.Formularios
             this.CboxEmpresa = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.DgvListarItems = new System.Windows.Forms.DataGridView();
+            this.CIDServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CDireccionItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CCantidadFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPrecioUnitarioDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CSubTotalLinea = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPorcentajeDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CTotalLinea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnItemAgregar = new System.Windows.Forms.Button();
             this.BtnEliminarLinea = new System.Windows.Forms.Button();
@@ -70,13 +77,6 @@ namespace SistemaTransporte.Formularios
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
             this.LblTotal = new System.Windows.Forms.Label();
-            this.CIDServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CDescripcionItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CCantidadFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPrecioUnitarioDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CSubTotalLinea = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPorcentajeDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CTotalLinea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -141,6 +141,7 @@ namespace SistemaTransporte.Formularios
             this.BtnFacturar.TabIndex = 0;
             this.BtnFacturar.Text = "Facturar";
             this.BtnFacturar.UseVisualStyleBackColor = true;
+            this.BtnFacturar.Click += new System.EventHandler(this.BtnFacturar_Click);
             // 
             // panel2
             // 
@@ -266,8 +267,10 @@ namespace SistemaTransporte.Formularios
             this.TxtIdCliente.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.TxtIdCliente.Location = new System.Drawing.Point(118, 95);
             this.TxtIdCliente.Name = "TxtIdCliente";
+            this.TxtIdCliente.ReadOnly = true;
             this.TxtIdCliente.Size = new System.Drawing.Size(122, 26);
             this.TxtIdCliente.TabIndex = 7;
+            this.TxtIdCliente.DoubleClick += new System.EventHandler(this.TxtIdCliente_DoubleClick);
             // 
             // label4
             // 
@@ -367,20 +370,20 @@ namespace SistemaTransporte.Formularios
             this.DgvListarItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvListarItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CIDServicio,
-            this.CDescripcionItem,
+            this.CDireccionItem,
             this.CCantidadFactura,
             this.CPrecioUnitarioDetalle,
             this.CSubTotalLinea,
             this.CPorcentajeDescuento,
             this.CTotalLinea});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvListarItems.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvListarItems.DefaultCellStyle = dataGridViewCellStyle1;
             this.DgvListarItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvListarItems.Location = new System.Drawing.Point(3, 295);
             this.DgvListarItems.Name = "DgvListarItems";
@@ -392,6 +395,76 @@ namespace SistemaTransporte.Formularios
             this.DgvListarItems.Size = new System.Drawing.Size(1062, 389);
             this.DgvListarItems.TabIndex = 5;
             this.DgvListarItems.VirtualMode = true;
+          // 
+            // CIDServicio
+            // 
+            this.CIDServicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CIDServicio.DataPropertyName = "IDServicio";
+            this.CIDServicio.HeaderText = "Código Servicio";
+            this.CIDServicio.MinimumWidth = 8;
+            this.CIDServicio.Name = "CIDServicio";
+            this.CIDServicio.ReadOnly = true;
+            this.CIDServicio.Width = 90;
+            // 
+            // CDireccionItem
+            // 
+            this.CDireccionItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CDireccionItem.DataPropertyName = "DireccionItem";
+            this.CDireccionItem.HeaderText = "Direccion";
+            this.CDireccionItem.MinimumWidth = 8;
+            this.CDireccionItem.Name = "CDireccionItem";
+            this.CDireccionItem.ReadOnly = true;
+            this.CDireccionItem.Width = 469;
+            // 
+            // CCantidadFactura
+            // 
+            this.CCantidadFactura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CCantidadFactura.DataPropertyName = "CantidadFactura";
+            this.CCantidadFactura.HeaderText = "Cantidad";
+            this.CCantidadFactura.MinimumWidth = 8;
+            this.CCantidadFactura.Name = "CCantidadFactura";
+            this.CCantidadFactura.ReadOnly = true;
+            this.CCantidadFactura.Width = 80;
+            // 
+            // CPrecioUnitarioDetalle
+            // 
+            this.CPrecioUnitarioDetalle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CPrecioUnitarioDetalle.DataPropertyName = "PrecioUnitarioDetalle";
+            this.CPrecioUnitarioDetalle.HeaderText = "Precio Unitario";
+            this.CPrecioUnitarioDetalle.MinimumWidth = 8;
+            this.CPrecioUnitarioDetalle.Name = "CPrecioUnitarioDetalle";
+            this.CPrecioUnitarioDetalle.ReadOnly = true;
+            this.CPrecioUnitarioDetalle.Width = 90;
+            // 
+            // CSubTotalLinea
+            // 
+            this.CSubTotalLinea.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CSubTotalLinea.DataPropertyName = "SubTotalLinea";
+            this.CSubTotalLinea.HeaderText = "SubTotal";
+            this.CSubTotalLinea.MinimumWidth = 8;
+            this.CSubTotalLinea.Name = "CSubTotalLinea";
+            this.CSubTotalLinea.ReadOnly = true;
+            this.CSubTotalLinea.Width = 90;
+            // 
+            // CPorcentajeDescuento
+            // 
+            this.CPorcentajeDescuento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CPorcentajeDescuento.DataPropertyName = "PorcentajeDescuento";
+            this.CPorcentajeDescuento.HeaderText = "Descuento";
+            this.CPorcentajeDescuento.MinimumWidth = 8;
+            this.CPorcentajeDescuento.Name = "CPorcentajeDescuento";
+            this.CPorcentajeDescuento.ReadOnly = true;
+            this.CPorcentajeDescuento.Width = 90;
+            // 
+            // CTotalLinea
+            // 
+            this.CTotalLinea.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CTotalLinea.DataPropertyName = "TotalLinea";
+            this.CTotalLinea.HeaderText = "Total";
+            this.CTotalLinea.MinimumWidth = 8;
+            this.CTotalLinea.Name = "CTotalLinea";
+            this.CTotalLinea.ReadOnly = true;
+            this.CTotalLinea.Width = 150;
             // 
             // tableLayoutPanel2
             // 
@@ -420,6 +493,7 @@ namespace SistemaTransporte.Formularios
             this.BtnItemAgregar.TabIndex = 0;
             this.BtnItemAgregar.Text = "Agregar Línea";
             this.BtnItemAgregar.UseVisualStyleBackColor = true;
+            this.BtnItemAgregar.Click += new System.EventHandler(this.BtnItemAgregar_Click);
             // 
             // BtnEliminarLinea
             // 
@@ -430,6 +504,7 @@ namespace SistemaTransporte.Formularios
             this.BtnEliminarLinea.TabIndex = 1;
             this.BtnEliminarLinea.Text = "Eliminar Línea";
             this.BtnEliminarLinea.UseVisualStyleBackColor = true;
+            this.BtnEliminarLinea.Click += new System.EventHandler(this.BtnEliminarLinea_Click);
             // 
             // BtnModificar
             // 
@@ -578,74 +653,6 @@ namespace SistemaTransporte.Formularios
             this.LblTotal.Text = "0";
             this.LblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // CIDServicio
-            // 
-            this.CIDServicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CIDServicio.DataPropertyName = "IDServicio";
-            this.CIDServicio.HeaderText = "Código Servicio";
-            this.CIDServicio.MinimumWidth = 8;
-            this.CIDServicio.Name = "CIDServicio";
-            this.CIDServicio.ReadOnly = true;
-            this.CIDServicio.Width = 90;
-            // 
-            // CDescripcionItem
-            // 
-            this.CDescripcionItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CDescripcionItem.DataPropertyName = "DescripcionItem";
-            this.CDescripcionItem.HeaderText = "Descripcion";
-            this.CDescripcionItem.MinimumWidth = 8;
-            this.CDescripcionItem.Name = "CDescripcionItem";
-            this.CDescripcionItem.ReadOnly = true;
-            // 
-            // CCantidadFactura
-            // 
-            this.CCantidadFactura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CCantidadFactura.DataPropertyName = "CantidadFactura";
-            this.CCantidadFactura.HeaderText = "Cantidad";
-            this.CCantidadFactura.MinimumWidth = 8;
-            this.CCantidadFactura.Name = "CCantidadFactura";
-            this.CCantidadFactura.ReadOnly = true;
-            this.CCantidadFactura.Width = 80;
-            // 
-            // CPrecioUnitarioDetalle
-            // 
-            this.CPrecioUnitarioDetalle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CPrecioUnitarioDetalle.DataPropertyName = "PrecioUnitarioDetalle";
-            this.CPrecioUnitarioDetalle.HeaderText = "Precio Unitario";
-            this.CPrecioUnitarioDetalle.MinimumWidth = 8;
-            this.CPrecioUnitarioDetalle.Name = "CPrecioUnitarioDetalle";
-            this.CPrecioUnitarioDetalle.ReadOnly = true;
-            this.CPrecioUnitarioDetalle.Width = 90;
-            // 
-            // CSubTotalLinea
-            // 
-            this.CSubTotalLinea.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CSubTotalLinea.DataPropertyName = "SubTotalLinea";
-            this.CSubTotalLinea.HeaderText = "SubTotal";
-            this.CSubTotalLinea.MinimumWidth = 8;
-            this.CSubTotalLinea.Name = "CSubTotalLinea";
-            this.CSubTotalLinea.ReadOnly = true;
-            this.CSubTotalLinea.Width = 90;
-            // 
-            // CPorcentajeDescuento
-            // 
-            this.CPorcentajeDescuento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CPorcentajeDescuento.DataPropertyName = "PorcentajeDescuento";
-            this.CPorcentajeDescuento.HeaderText = "Descuento";
-            this.CPorcentajeDescuento.MinimumWidth = 8;
-            this.CPorcentajeDescuento.Name = "CPorcentajeDescuento";
-            this.CPorcentajeDescuento.ReadOnly = true;
-            this.CPorcentajeDescuento.Width = 90;
-            // 
-            // CTotalLinea
-            // 
-            this.CTotalLinea.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CTotalLinea.DataPropertyName = "TotalLinea";
-            this.CTotalLinea.HeaderText = "Total";
-            this.CTotalLinea.MinimumWidth = 8;
-            this.CTotalLinea.Name = "CTotalLinea";
-            this.CTotalLinea.ReadOnly = true;
-            // 
             // FrmFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -653,6 +660,7 @@ namespace SistemaTransporte.Formularios
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1365, 794);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "FrmFacturacion";
@@ -718,7 +726,7 @@ namespace SistemaTransporte.Formularios
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label LblDescuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn CIDServicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CDescripcionItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CDireccionItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn CCantidadFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn CPrecioUnitarioDetalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn CSubTotalLinea;

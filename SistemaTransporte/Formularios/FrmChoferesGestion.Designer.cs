@@ -369,6 +369,7 @@ namespace SistemaTransporte.Formularios
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.GbDetalles);
             this.Controls.Add(this.DgvListaChoferes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmChoferesGestion";
             this.Text = "Gestión de Choferes";

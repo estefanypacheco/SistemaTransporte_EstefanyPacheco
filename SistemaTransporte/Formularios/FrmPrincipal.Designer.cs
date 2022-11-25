@@ -64,7 +64,7 @@ namespace SistemaTransporte.Formularios
             this.acercaDeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1084, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(1084, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -76,7 +76,7 @@ namespace SistemaTransporte.Formularios
             this.MnuTransportesGestion,
             this.MnuChoferesGestion});
             this.mantenimientosToolStripMenuItem.Name = "mantenimientosToolStripMenuItem";
-            this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(147, 32);
+            this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(147, 29);
             this.mantenimientosToolStripMenuItem.Text = "Administración";
             this.mantenimientosToolStripMenuItem.Click += new System.EventHandler(this.mantenimientosToolStripMenuItem_Click);
             // 
@@ -113,7 +113,7 @@ namespace SistemaTransporte.Formularios
             this.MnuPuntoDeVenta.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MnuFacturar});
             this.MnuPuntoDeVenta.Name = "MnuPuntoDeVenta";
-            this.MnuPuntoDeVenta.Size = new System.Drawing.Size(80, 32);
+            this.MnuPuntoDeVenta.Size = new System.Drawing.Size(80, 29);
             this.MnuPuntoDeVenta.Text = "Ventas";
             // 
             // MnuFacturar
@@ -129,7 +129,7 @@ namespace SistemaTransporte.Formularios
             this.seguridadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MnuUsuariosGestion});
             this.seguridadToolStripMenuItem.Name = "seguridadToolStripMenuItem";
-            this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(109, 32);
+            this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(109, 29);
             this.seguridadToolStripMenuItem.Text = "Seguridad";
             this.seguridadToolStripMenuItem.Click += new System.EventHandler(this.seguridadToolStripMenuItem_Click);
             // 
@@ -146,7 +146,7 @@ namespace SistemaTransporte.Formularios
             this.MnuInfoSistema,
             this.MnuEmpresa});
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(117, 32);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(117, 29);
             this.acercaDeToolStripMenuItem.Text = "Acerca de...";
             // 
             // MnuInfoSistema
@@ -210,6 +210,7 @@ namespace SistemaTransporte.Formularios
             this.ClientSize = new System.Drawing.Size(1084, 579);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;

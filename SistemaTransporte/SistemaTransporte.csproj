@@ -70,30 +70,6 @@
     <Compile Include="Formularios\FrmAnularFactura.Designer.cs">
       <DependentUpon>FrmAnularFactura.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmBusquedaChoferFactura.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FrmBusquedaChoferFactura.Designer.cs">
-      <DependentUpon>FrmBusquedaChoferFactura.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\FrmBusquedaClienteFactura.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FrmBusquedaClienteFactura.Designer.cs">
-      <DependentUpon>FrmBusquedaClienteFactura.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\FrmBusquedaServicioFactura.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FrmBusquedaServicioFactura.Designer.cs">
-      <DependentUpon>FrmBusquedaServicioFactura.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\FrmBusquedaTransporteClienteFactura.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FrmBusquedaTransporteClienteFactura.Designer.cs">
-      <DependentUpon>FrmBusquedaTransporteClienteFactura.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\FrmChoferesGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +87,12 @@
     </Compile>
     <Compile Include="Formularios\FrmEmpresa.Designer.cs">
       <DependentUpon>FrmEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmFacturaItemGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmFacturaItemGestion.Designer.cs">
+      <DependentUpon>FrmFacturaItemGestion.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -175,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmEmpresa.resx">
       <DependentUpon>FrmEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmFacturaItemGestion.resx">
+      <DependentUpon>FrmFacturaItemGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

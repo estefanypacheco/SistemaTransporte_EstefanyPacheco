@@ -9,7 +9,7 @@ namespace Logica.Models
     public class FacturaDetalle
     {
         //Simples
-        public string DescripcionItem { get; set; }
+        public string DireccionItem { get; set; }
         public int CantidadFactura { get; set; }
         public decimal PrecioUnitarioDetalle { get; set; }
         public decimal PorcentajeDetalle { get; set; }
@@ -17,7 +17,7 @@ namespace Logica.Models
         public decimal TotalLinea { get; set; }
 
         //Compuesto
-        Servicio MiServicio { get; set; }
+       public Servicio MiServicio { get; set; }
 
         public FacturaDetalle()
         {

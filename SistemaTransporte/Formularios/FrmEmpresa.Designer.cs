@@ -125,6 +125,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvEmpresa);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmEmpresa";
             this.Text = "Información de Empresa";

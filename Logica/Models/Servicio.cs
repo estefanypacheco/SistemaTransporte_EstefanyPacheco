@@ -188,6 +188,20 @@ namespace Logica.Models
             return R;
         }
 
+        public DataTable BuscarServicio(bool VerActivos = true, string Filtro = "")
+        {
+
+            DataTable R = new DataTable();
+
+            Conexion MiCnn = new Conexion();
+
+            MiCnn.ListadoDeParametros.Add(new SqlParameter("@Filtro", Filtro));
+
+            R = MiCnn.HacerSelect("SPServicioBuscar");
+
+            return R;
+        }
+
         public bool ConsultarPorDireccion()
         {
             bool R = false;
