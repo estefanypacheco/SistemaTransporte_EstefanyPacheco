@@ -16,5 +16,10 @@ namespace SistemaTransporte.Formularios
         {
             InitializeComponent();
         }
+
+        private void FrmSobreSistema_Load(object sender, EventArgs e)
+        {
+            MdiParent = ObjetosGlobales.MiFormPrincipal;
+        }
     }
 }

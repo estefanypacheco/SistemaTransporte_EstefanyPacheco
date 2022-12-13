@@ -19,6 +19,9 @@ namespace Logica.Models
         public decimal Total { get; set; }
         public string Anotacion { get; set; }
 
+
+        public static int incremento {get; set;}
+
         //composiciones simples
 
         public FacturaTipo MiTipo { get; set; }
@@ -55,13 +58,12 @@ namespace Logica.Models
 
             Conexion MiCnnEncabezado = new Conexion();
 
-            Totalizar();
 
-            MiCnnEncabezado.ListadoDeParametros.Add(new SqlParameter("@numero", this.NumeroFactura));
+           // MiCnnEncabezado.ListadoDeParametros.Add(new SqlParameter("@numero", this.NumeroFactura));
             MiCnnEncabezado.ListadoDeParametros.Add(new SqlParameter("@fecha", this.Fecha));
-            MiCnnEncabezado.ListadoDeParametros.Add(new SqlParameter("@subtotal", this.SubTotal));
-            MiCnnEncabezado.ListadoDeParametros.Add(new SqlParameter("@descuentos", this.Descuento));
-            MiCnnEncabezado.ListadoDeParametros.Add(new SqlParameter("@total", this.Total));
+            //MiCnnEncabezado.ListadoDeParametros.Add(new SqlParameter("@subtotal", this.SubTotal));
+            //MiCnnEncabezado.ListadoDeParametros.Add(new SqlParameter("@descuentos", this.Descuento));
+            //MiCnnEncabezado.ListadoDeParametros.Add(new SqlParameter("@total", this.Total));
             MiCnnEncabezado.ListadoDeParametros.Add(new SqlParameter("@notas", this.Anotacion));
 
             MiCnnEncabezado.ListadoDeParametros.Add(new SqlParameter("@idtipo", this.MiTipo.IDFacturaTipo));
@@ -153,20 +155,7 @@ namespace Logica.Models
         }
 
 
-        private void Totalizar()
-        {
-            //asignar numeros TODO
-            //TAMBIEN ES CON EL RECORRIDO DE LAS FILAS
 
-
-            this.NumeroFactura = 2;
-            this.SubTotal = 0;
-            this.Descuento = 0;
-            this.Total = 0;
-
-
-            //asignar valores a los decimales de arriba
-        }
 
         public DataTable AsignarEsquemaDetalle() { 
 

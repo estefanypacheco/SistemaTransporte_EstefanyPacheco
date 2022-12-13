@@ -29,7 +29,6 @@ namespace SistemaTransporte.Formularios
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mantenimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,8 +46,6 @@ namespace SistemaTransporte.Formularios
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.LblUsuarioLogin = new System.Windows.Forms.ToolStripStatusLabel();
-            this.LblFechaHora = new System.Windows.Forms.ToolStripStatusLabel();
-            this.TmrEstablecerFechaHora = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -168,8 +165,7 @@ namespace SistemaTransporte.Formularios
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
-            this.LblUsuarioLogin,
-            this.LblFechaHora});
+            this.LblUsuarioLogin});
             this.statusStrip1.Location = new System.Drawing.Point(0, 547);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1084, 32);
@@ -189,27 +185,18 @@ namespace SistemaTransporte.Formularios
             this.LblUsuarioLogin.Size = new System.Drawing.Size(25, 25);
             this.LblUsuarioLogin.Text = "U";
             // 
-            // LblFechaHora
-            // 
-            this.LblFechaHora.Name = "LblFechaHora";
-            this.LblFechaHora.Size = new System.Drawing.Size(968, 25);
-            this.LblFechaHora.Spring = true;
-            this.LblFechaHora.Text = "Hora- Fecha";
-            this.LblFechaHora.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // TmrEstablecerFechaHora
-            // 
-            this.TmrEstablecerFechaHora.Interval = 1000;
-            this.TmrEstablecerFechaHora.Tick += new System.EventHandler(this.TmrEstablecerFechaHora_Tick);
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.BackColor = System.Drawing.Color.Silver;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1084, 579);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
@@ -246,7 +233,5 @@ namespace SistemaTransporte.Formularios
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel LblUsuarioLogin;
-        private System.Windows.Forms.Timer TmrEstablecerFechaHora;
-        private System.Windows.Forms.ToolStripStatusLabel LblFechaHora;
     }
 }

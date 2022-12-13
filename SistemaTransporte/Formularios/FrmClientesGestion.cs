@@ -12,6 +12,8 @@ namespace SistemaTransporte.Formularios
 {
     public partial class FrmClientesGestion : Form
     {
+        DataTable ListaClientes = new DataTable();
+
 
         public Logica.Models.Cliente MiClienteLocal { get; set; }
 
@@ -400,6 +402,47 @@ namespace SistemaTransporte.Formularios
                 TxtEmail.Focus();
                 TxtEmail.SelectAll();
             }
+        }
+
+        private void BuscarClienteForm(string Filtro = "")
+        {
+
+            ListaClientes = new DataTable();
+
+            ListaClientes = MiClienteLocal.BuscarClienteform(true, Filtro);
+
+            DgvListaClientes.DataSource = ListaClientes;
+
+            DgvListaClientes.ClearSelection();
+
+        }
+
+        private void TrmBuscar_Tick(object sender, EventArgs e)
+        {
+            TrmBuscar.Enabled = false;
+
+            if (!string.IsNullOrEmpty(TxtBuscar.Text.Trim()))
+            {
+                string Filtro = TxtBuscar.Text.Trim();
+
+                BuscarClienteForm(Filtro);
+
+            }
+            else
+            {
+
+                BuscarClienteForm();
+            }
+        }
+
+        private void TxtBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            TrmBuscar.Enabled = false;
+        }
+
+        private void TxtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            TrmBuscar.Enabled = true;
         }
     }
 }

@@ -29,6 +29,7 @@ namespace SistemaTransporte.Formularios
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUsuariosGestion));
             this.DgvListaUsuarios = new System.Windows.Forms.DataGridView();
             this.CIDUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +60,7 @@ namespace SistemaTransporte.Formularios
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
+            this.TrmBuscar = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaUsuarios)).BeginInit();
             this.GbDetalles.SuspendLayout();
             this.SuspendLayout();
@@ -320,6 +322,8 @@ namespace SistemaTransporte.Formularios
             this.TxtBuscar.Name = "TxtBuscar";
             this.TxtBuscar.Size = new System.Drawing.Size(638, 26);
             this.TxtBuscar.TabIndex = 8;
+            this.TxtBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBuscar_KeyDown);
+            this.TxtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBuscar_KeyUp);
             // 
             // CbVerActivos
             // 
@@ -366,6 +370,11 @@ namespace SistemaTransporte.Formularios
             this.BtnLimpiar.Text = "Limpiar ";
             this.BtnLimpiar.UseVisualStyleBackColor = false;
             this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
+            // 
+            // TrmBuscar
+            // 
+            this.TrmBuscar.Interval = 800;
+            this.TrmBuscar.Tick += new System.EventHandler(this.TrmBuscar_Tick);
             // 
             // FrmUsuariosGestion
             // 
@@ -427,5 +436,6 @@ namespace SistemaTransporte.Formularios
         private System.Windows.Forms.DataGridViewTextBoxColumn CCedulaUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn CUsuarioRol;
         private System.Windows.Forms.Button BtnVer;
+        private System.Windows.Forms.Timer TrmBuscar;
     }
 }

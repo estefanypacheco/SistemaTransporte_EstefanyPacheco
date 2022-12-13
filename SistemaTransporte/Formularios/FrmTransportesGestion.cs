@@ -13,6 +13,9 @@ namespace SistemaTransporte.Formularios
     public partial class FrmTransportesGestion : Form
     {
 
+        DataTable ListaTransportes = new DataTable();
+
+
         public Logica.Models.Transporte MiTransporteLocal { get; set; }
 
         public FrmTransportesGestion()
@@ -35,8 +38,13 @@ namespace SistemaTransporte.Formularios
         private void FrmTransportesGestion_Load(object sender, EventArgs e)
         {
 
-            ListarTransportes();
+            MdiParent = ObjetosGlobales.MiFormPrincipal;
+
+            ListarTransportesActivos();
             CargarTipoTransporte();
+            LimpiarForm();
+            ActivarAgregar();
+            BuscarTransporte();
         }
 
 
@@ -387,6 +395,48 @@ namespace SistemaTransporte.Formularios
                 ActivarEditarYEliminar();
 
             }
+        }
+
+
+        private void BuscarTransporte(string Filtro = "")
+        {
+
+            ListaTransportes = new DataTable();
+
+            ListaTransportes = MiTransporteLocal.BuscarTransporte(true, Filtro);
+
+            DgvListaTransportes.DataSource = ListaTransportes;
+
+            DgvListaTransportes.ClearSelection();
+
+        }
+
+        private void TrmBuscar_Tick(object sender, EventArgs e)
+        {
+            TrmBuscar.Enabled = false;
+
+            if (!string.IsNullOrEmpty(TxtBuscar.Text.Trim()))
+            {
+                string Filtro = TxtBuscar.Text.Trim();
+
+                BuscarTransporte(Filtro);
+
+            }
+            else
+            {
+
+                BuscarTransporte();
+            }
+        }
+
+        private void TxtBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            TrmBuscar.Enabled = false;
+        }
+
+        private void TxtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            TrmBuscar.Enabled = true;
         }
     }
 

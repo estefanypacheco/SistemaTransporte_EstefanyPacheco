@@ -75,7 +75,7 @@ namespace SistemaTransporte.Formularios
             this.DgvLista.RowHeadersWidth = 62;
             this.DgvLista.RowTemplate.Height = 28;
             this.DgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvLista.Size = new System.Drawing.Size(968, 351);
+            this.DgvLista.Size = new System.Drawing.Size(1014, 351);
             this.DgvLista.TabIndex = 1;
             this.DgvLista.VirtualMode = true;
             this.DgvLista.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgvLista_DataBindingComplete);
@@ -136,7 +136,7 @@ namespace SistemaTransporte.Formularios
             // 
             // BtnAceptar
             // 
-            this.BtnAceptar.Location = new System.Drawing.Point(95, 441);
+            this.BtnAceptar.Location = new System.Drawing.Point(96, 437);
             this.BtnAceptar.Name = "BtnAceptar";
             this.BtnAceptar.Size = new System.Drawing.Size(205, 52);
             this.BtnAceptar.TabIndex = 2;
@@ -146,7 +146,7 @@ namespace SistemaTransporte.Formularios
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.Location = new System.Drawing.Point(802, 441);
+            this.BtnCancelar.Location = new System.Drawing.Point(798, 437);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(134, 52);
             this.BtnCancelar.TabIndex = 3;
@@ -172,7 +172,7 @@ namespace SistemaTransporte.Formularios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 515);
+            this.ClientSize = new System.Drawing.Size(1038, 551);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnCancelar);

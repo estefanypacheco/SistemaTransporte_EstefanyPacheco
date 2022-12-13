@@ -28,7 +28,6 @@ namespace SistemaTransporte.Formularios
 
             FacturaLocal = new Logica.Models.Factura();
             ListaDetallesLocal = new DataTable();
-            EstablecerFuenteDatosDataGrid();
         }
 
 
@@ -43,14 +42,14 @@ namespace SistemaTransporte.Formularios
                 decimal Descuento = 0;
                 decimal Total = 0;
 
-                foreach (DataRow item in ListaDetallesLocal.Rows) 
-                    {
+                foreach (DataRow item in ListaDetallesLocal.Rows)
+                {
 
                     SubTotal += Convert.ToDecimal(item["CantidadFactura"]) * Convert.ToDecimal(item["PrecioUnitarioDetalle"]);
                     Descuento += SubTotal * Convert.ToDecimal(item["PorcentajeDescuento"]) / 100;
                     Total += Convert.ToDecimal(item["TotalLinea"]);
 
-                    }
+                }
 
                 //ya que tenemos las totalizaciones se muestran.
 
@@ -114,8 +113,8 @@ namespace SistemaTransporte.Formularios
 
 
 
-            //combobox cargar
-            private void CargarComboUsuario()
+        //combobox cargar
+        private void CargarComboUsuario()
         {
 
 
@@ -185,7 +184,7 @@ namespace SistemaTransporte.Formularios
             Form MiFormBuscarCliente = new Formularios.FrmClienteSeleccionar();
             DialogResult respuesta = MiFormBuscarCliente.ShowDialog();
 
-            if (respuesta  == DialogResult.OK)
+            if (respuesta == DialogResult.OK)
             {
                 LblNombreCliente.Text = FacturaLocal.MiCliente.NombreCliente;
                 TxtIdCliente.Text = FacturaLocal.MiCliente.IDCliente.ToString();
@@ -220,7 +219,7 @@ namespace SistemaTransporte.Formularios
 
             //cargar composicion de detalles a partir del datatable de detalles local
 
-            foreach(DataRow item in ListaDetallesLocal.Rows)
+            foreach (DataRow item in ListaDetallesLocal.Rows)
             {
                 Logica.Models.FacturaDetalle detalle = new Logica.Models.FacturaDetalle();
 
@@ -269,7 +268,6 @@ namespace SistemaTransporte.Formularios
 
                 }
 
-
             }
             else
             {
@@ -317,7 +315,26 @@ namespace SistemaTransporte.Formularios
 
         private void BtnEliminarLinea_Click(object sender, EventArgs e)
         {
-//se puede hacer con foreach
+            if (DgvListarItems.SelectedRows.Count == 1)
+            {
+                int Fila = DgvListarItems.CurrentCell.RowIndex;
+                DgvListarItems.Rows.RemoveAt(Fila);
+                BtnEliminarLinea.Enabled = false;
+                Totalizar();
+            }
+        }
+
+        private void DgvListarItems_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DgvListarItems.SelectedRows.Count == 1)
+            {
+                BtnEliminarLinea.Enabled = true;
+            }
+        }
+
+        private void DgvListarItems_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+          DgvListarItems.ClearSelection();
 
         }
     }

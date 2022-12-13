@@ -29,6 +29,7 @@ namespace SistemaTransporte.Formularios
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTransportesGestion));
             this.BtnLimpiar = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
@@ -55,6 +56,7 @@ namespace SistemaTransporte.Formularios
             this.CDescripcionTransporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CIDTransporteTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CbVerActivos = new System.Windows.Forms.CheckBox();
+            this.TrmBuscar = new System.Windows.Forms.Timer(this.components);
             this.GbDetalles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaTransportes)).BeginInit();
             this.SuspendLayout();
@@ -98,6 +100,8 @@ namespace SistemaTransporte.Formularios
             this.TxtBuscar.Name = "TxtBuscar";
             this.TxtBuscar.Size = new System.Drawing.Size(638, 26);
             this.TxtBuscar.TabIndex = 18;
+            this.TxtBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBuscar_KeyDown);
+            this.TxtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBuscar_KeyUp);
             // 
             // label1
             // 
@@ -313,6 +317,11 @@ namespace SistemaTransporte.Formularios
             this.CbVerActivos.UseVisualStyleBackColor = true;
             this.CbVerActivos.CheckedChanged += new System.EventHandler(this.CbVerActivos_CheckedChanged);
             // 
+            // TrmBuscar
+            // 
+            this.TrmBuscar.Interval = 800;
+            this.TrmBuscar.Tick += new System.EventHandler(this.TrmBuscar_Tick);
+            // 
             // FrmTransportesGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -329,6 +338,7 @@ namespace SistemaTransporte.Formularios
             this.Controls.Add(this.DgvListaTransportes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmTransportesGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Transportes";
@@ -367,5 +377,6 @@ namespace SistemaTransporte.Formularios
         private System.Windows.Forms.DataGridViewTextBoxColumn CPlacaTransporte;
         private System.Windows.Forms.DataGridViewTextBoxColumn CDescripcionTransporte;
         private System.Windows.Forms.DataGridViewTextBoxColumn CIDTransporteTipo;
+        private System.Windows.Forms.Timer TrmBuscar;
     }
 }

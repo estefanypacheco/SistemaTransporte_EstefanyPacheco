@@ -62,11 +62,6 @@ namespace SistemaTransporte.Formularios
             this.CSubTotalLinea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPorcentajeDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CTotalLinea = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.BtnItemAgregar = new System.Windows.Forms.Button();
-            this.BtnEliminarLinea = new System.Windows.Forms.Button();
-            this.BtnModificar = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
@@ -77,16 +72,19 @@ namespace SistemaTransporte.Formularios
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
             this.LblTotal = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnItemAgregar = new System.Windows.Forms.Button();
+            this.BtnEliminarLinea = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListarItems)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -99,8 +97,8 @@ namespace SistemaTransporte.Formularios
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.DgvListarItems, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -395,7 +393,9 @@ namespace SistemaTransporte.Formularios
             this.DgvListarItems.Size = new System.Drawing.Size(1062, 389);
             this.DgvListarItems.TabIndex = 5;
             this.DgvListarItems.VirtualMode = true;
-          // 
+            this.DgvListarItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListarItems_CellClick);
+            this.DgvListarItems.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgvListarItems_DataBindingComplete);
+            // 
             // CIDServicio
             // 
             this.CIDServicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -465,66 +465,6 @@ namespace SistemaTransporte.Formularios
             this.CTotalLinea.Name = "CTotalLinea";
             this.CTotalLinea.ReadOnly = true;
             this.CTotalLinea.Width = 150;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.BtnItemAgregar, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.BtnEliminarLinea, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.BtnModificar, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.button4, 0, 3);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(1071, 295);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(231, 337);
-            this.tableLayoutPanel2.TabIndex = 6;
-            // 
-            // BtnItemAgregar
-            // 
-            this.BtnItemAgregar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnItemAgregar.Location = new System.Drawing.Point(3, 3);
-            this.BtnItemAgregar.Name = "BtnItemAgregar";
-            this.BtnItemAgregar.Size = new System.Drawing.Size(225, 78);
-            this.BtnItemAgregar.TabIndex = 0;
-            this.BtnItemAgregar.Text = "Agregar Línea";
-            this.BtnItemAgregar.UseVisualStyleBackColor = true;
-            this.BtnItemAgregar.Click += new System.EventHandler(this.BtnItemAgregar_Click);
-            // 
-            // BtnEliminarLinea
-            // 
-            this.BtnEliminarLinea.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnEliminarLinea.Location = new System.Drawing.Point(3, 87);
-            this.BtnEliminarLinea.Name = "BtnEliminarLinea";
-            this.BtnEliminarLinea.Size = new System.Drawing.Size(225, 78);
-            this.BtnEliminarLinea.TabIndex = 1;
-            this.BtnEliminarLinea.Text = "Eliminar Línea";
-            this.BtnEliminarLinea.UseVisualStyleBackColor = true;
-            this.BtnEliminarLinea.Click += new System.EventHandler(this.BtnEliminarLinea_Click);
-            // 
-            // BtnModificar
-            // 
-            this.BtnModificar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnModificar.Location = new System.Drawing.Point(3, 171);
-            this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(225, 78);
-            this.BtnModificar.TabIndex = 2;
-            this.BtnModificar.Text = "Modificar";
-            this.BtnModificar.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.Location = new System.Drawing.Point(3, 255);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(225, 79);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel3
             // 
@@ -653,6 +593,42 @@ namespace SistemaTransporte.Formularios
             this.LblTotal.Text = "0";
             this.LblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.BtnItemAgregar, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.BtnEliminarLinea, 0, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(1071, 295);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(291, 389);
+            this.tableLayoutPanel2.TabIndex = 6;
+            // 
+            // BtnItemAgregar
+            // 
+            this.BtnItemAgregar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnItemAgregar.Location = new System.Drawing.Point(3, 3);
+            this.BtnItemAgregar.Name = "BtnItemAgregar";
+            this.BtnItemAgregar.Size = new System.Drawing.Size(285, 188);
+            this.BtnItemAgregar.TabIndex = 0;
+            this.BtnItemAgregar.Text = "Agregar Línea";
+            this.BtnItemAgregar.UseVisualStyleBackColor = true;
+            this.BtnItemAgregar.Click += new System.EventHandler(this.BtnItemAgregar_Click);
+            // 
+            // BtnEliminarLinea
+            // 
+            this.BtnEliminarLinea.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnEliminarLinea.Location = new System.Drawing.Point(3, 197);
+            this.BtnEliminarLinea.Name = "BtnEliminarLinea";
+            this.BtnEliminarLinea.Size = new System.Drawing.Size(285, 189);
+            this.BtnEliminarLinea.TabIndex = 1;
+            this.BtnEliminarLinea.Text = "Eliminar Línea";
+            this.BtnEliminarLinea.UseVisualStyleBackColor = true;
+            this.BtnEliminarLinea.Click += new System.EventHandler(this.BtnEliminarLinea_Click);
+            // 
             // FrmFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -663,6 +639,7 @@ namespace SistemaTransporte.Formularios
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "FrmFacturacion";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -675,11 +652,11 @@ namespace SistemaTransporte.Formularios
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListarItems)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -708,8 +685,6 @@ namespace SistemaTransporte.Formularios
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button BtnItemAgregar;
         private System.Windows.Forms.Button BtnEliminarLinea;
-        private System.Windows.Forms.Button BtnModificar;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox CboxTransporte;
         private System.Windows.Forms.ComboBox CboxChofer;
         private System.Windows.Forms.Label label8;

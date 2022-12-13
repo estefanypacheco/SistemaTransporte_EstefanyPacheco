@@ -12,6 +12,8 @@ namespace SistemaTransporte.Formularios
 {
     public partial class FrmChoferesGestion : Form
     {
+
+        DataTable ListaChoferes = new DataTable();
         public Logica.Models.Chofer MiChoferLocal { get; set; }
 
         public FrmChoferesGestion()
@@ -427,6 +429,47 @@ namespace SistemaTransporte.Formularios
             LimpiarForm();
 
             ActivarAgregar();
+        }
+
+        private void BuscarChofer(string Filtro = "")
+        {
+
+            ListaChoferes = new DataTable();
+
+            ListaChoferes = MiChoferLocal.BuscarChofer(true, Filtro);
+
+            DgvListaChoferes.DataSource = ListaChoferes;
+
+            DgvListaChoferes.ClearSelection();
+
+        }
+
+        private void TrmBuscar_Tick(object sender, EventArgs e)
+        {
+            TrmBuscar.Enabled = false;
+
+            if (!string.IsNullOrEmpty(TxtBuscar.Text.Trim()))
+            {
+                string Filtro = TxtBuscar.Text.Trim();
+
+                BuscarChofer(Filtro);
+
+            }
+            else
+            {
+
+                BuscarChofer();
+            }
+        }
+
+        private void TxtBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            TrmBuscar.Enabled = false;
+        }
+
+        private void TxtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            TrmBuscar.Enabled = true;
         }
     }
 }

@@ -37,7 +37,6 @@ namespace SistemaTransporte
         public static Formularios.FrmServiciosGestion FrmServiciosGestion = new Formularios.FrmServiciosGestion();
         public static Formularios.FrmClientesGestion FrmClientesGestion = new Formularios.FrmClientesGestion();
         public static Formularios.FrmFacturacion MiFormFactura = new Formularios.FrmFacturacion();
-        public static Formularios.FrmAnularFactura FrmAnularFactura = new Formularios.FrmAnularFactura();
         public static Formularios.FrmEmpresa FrmEmpresa = new Formularios.FrmEmpresa();
         public static Formularios.FrmSobreSistema FrmSobreSistema = new Formularios.FrmSobreSistema();
 

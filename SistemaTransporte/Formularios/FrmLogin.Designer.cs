@@ -39,7 +39,6 @@ namespace SistemaTransporte.Formularios
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PbVerPassword = new System.Windows.Forms.PictureBox();
             this.LblRecuperarContrasennia = new System.Windows.Forms.LinkLabel();
-            this.BtnAccesoRapido = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbVerPassword)).BeginInit();
             this.SuspendLayout();
@@ -135,25 +134,13 @@ namespace SistemaTransporte.Formularios
             this.LblRecuperarContrasennia.Text = "Olvidé mi contraseña..";
             this.LblRecuperarContrasennia.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LblRecuperarContrasennia_LinkClicked);
             // 
-            // BtnAccesoRapido
-            // 
-            this.BtnAccesoRapido.Location = new System.Drawing.Point(44, 501);
-            this.BtnAccesoRapido.Name = "BtnAccesoRapido";
-            this.BtnAccesoRapido.Size = new System.Drawing.Size(325, 60);
-            this.BtnAccesoRapido.TabIndex = 12;
-            this.BtnAccesoRapido.Text = "Boton rápido";
-            this.BtnAccesoRapido.UseVisualStyleBackColor = true;
-            this.BtnAccesoRapido.Visible = false;
-            this.BtnAccesoRapido.Click += new System.EventHandler(this.BtnAccesoRapido_Click);
-            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(421, 573);
-            this.Controls.Add(this.BtnAccesoRapido);
+            this.ClientSize = new System.Drawing.Size(417, 567);
             this.Controls.Add(this.LblRecuperarContrasennia);
             this.Controls.Add(this.PbVerPassword);
             this.Controls.Add(this.pictureBox1);
@@ -170,7 +157,6 @@ namespace SistemaTransporte.Formularios
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de Sesión";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLogin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbVerPassword)).EndInit();
             this.ResumeLayout(false);
@@ -189,6 +175,5 @@ namespace SistemaTransporte.Formularios
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox PbVerPassword;
         private System.Windows.Forms.LinkLabel LblRecuperarContrasennia;
-        private System.Windows.Forms.Button BtnAccesoRapido;
     }
 }

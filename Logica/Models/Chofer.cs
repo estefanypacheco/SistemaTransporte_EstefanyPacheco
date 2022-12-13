@@ -248,6 +248,19 @@ namespace Logica.Models
 
 
 
+        public DataTable BuscarChofer(bool VerActivos = true, string Filtro = "")
+        {
+
+            DataTable R = new DataTable();
+
+            Conexion MiCnn = new Conexion();
+
+            MiCnn.ListadoDeParametros.Add(new SqlParameter("@Filtro", Filtro));
+
+            R = MiCnn.HacerSelect("SPChoferesBuscar");
+
+            return R;
+        }
 
 
     }

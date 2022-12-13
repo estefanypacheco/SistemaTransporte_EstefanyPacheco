@@ -29,6 +29,7 @@ namespace SistemaTransporte.Formularios
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmClientesGestion));
             this.BtnLimpiar = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
@@ -59,6 +60,7 @@ namespace SistemaTransporte.Formularios
             this.CTelefonoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CDireccionCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CNombreClienteTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrmBuscar = new System.Windows.Forms.Timer(this.components);
             this.GbDetalles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaClientes)).BeginInit();
             this.SuspendLayout();
@@ -115,6 +117,8 @@ namespace SistemaTransporte.Formularios
             this.TxtBuscar.Name = "TxtBuscar";
             this.TxtBuscar.Size = new System.Drawing.Size(638, 26);
             this.TxtBuscar.TabIndex = 18;
+            this.TxtBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBuscar_KeyDown);
+            this.TxtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBuscar_KeyUp);
             // 
             // label1
             // 
@@ -355,6 +359,11 @@ namespace SistemaTransporte.Formularios
             this.CNombreClienteTipo.ReadOnly = true;
             this.CNombreClienteTipo.Width = 150;
             // 
+            // TrmBuscar
+            // 
+            this.TrmBuscar.Interval = 800;
+            this.TrmBuscar.Tick += new System.EventHandler(this.TrmBuscar_Tick);
+            // 
             // FrmClientesGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -371,6 +380,7 @@ namespace SistemaTransporte.Formularios
             this.Controls.Add(this.DgvListaClientes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmClientesGestion";
             this.Text = "Gestión de Clientes";
             this.Load += new System.EventHandler(this.FrmClientesGestion_Load);
@@ -412,5 +422,6 @@ namespace SistemaTransporte.Formularios
         private System.Windows.Forms.DataGridViewTextBoxColumn CTelefonoCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn CDireccionCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn CNombreClienteTipo;
+        private System.Windows.Forms.Timer TrmBuscar;
     }
 }

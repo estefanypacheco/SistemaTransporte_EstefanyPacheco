@@ -20,6 +20,7 @@ namespace SistemaTransporte.Formularios
 
         private void FrmEmpresa_Load(object sender, EventArgs e)
         {
+            MdiParent = ObjetosGlobales.MiFormPrincipal;
             ListarEmpresa();
         }
 

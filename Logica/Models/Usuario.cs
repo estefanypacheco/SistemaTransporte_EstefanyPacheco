@@ -371,5 +371,19 @@ namespace Logica.Models
             return R;
         }
 
+        public DataTable BuscarUsuario(bool VerActivos = true, string Filtro = "")
+        {
+
+            DataTable R = new DataTable();
+
+            Conexion MiCnn = new Conexion();
+
+            MiCnn.ListadoDeParametros.Add(new SqlParameter("@Filtro", Filtro));
+
+            R = MiCnn.HacerSelect("SPUsuariosBuscar");
+
+            return R;
+        }
+
     }
 }

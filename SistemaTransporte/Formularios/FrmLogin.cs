@@ -27,17 +27,6 @@ namespace SistemaTransporte.Formularios
             Application.Exit();
         }
 
-        //boton temporal para ingresar
-        private void FrmLogin_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Control && e.KeyCode == Keys.CapsLock)
-            {
-                BtnAccesoRapido.Visible = true;
-
-
-            }
-
-        }
 
         private void BtnAccesoRapido_Click(object sender, EventArgs e)
         {

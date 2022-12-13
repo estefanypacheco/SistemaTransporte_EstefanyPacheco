@@ -84,6 +84,19 @@ namespace Logica.Models
         }
 
 
+        public DataTable BuscarTransporte(bool VerActivos = true, string Filtro = "")
+        {
+
+            DataTable R = new DataTable();
+
+            Conexion MiCnn = new Conexion();
+
+            MiCnn.ListadoDeParametros.Add(new SqlParameter("@Filtro", Filtro));
+
+            R = MiCnn.HacerSelect("SPTransportesBuscar");
+
+            return R;
+        }
 
         public bool Activar()
         {

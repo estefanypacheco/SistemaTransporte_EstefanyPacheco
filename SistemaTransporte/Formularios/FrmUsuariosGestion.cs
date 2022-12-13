@@ -13,6 +13,9 @@ namespace SistemaTransporte.Formularios
     public partial class FrmUsuariosGestion : Form
     {
 
+
+        DataTable ListaUsuarios = new DataTable();
+
         //atributos 
         //Objeto local
         public Logica.Models.Usuario MiUsuarioLocal { get; set; }
@@ -468,6 +471,48 @@ namespace SistemaTransporte.Formularios
                 ActivarEditarYEliminar();
 
             }
+        }
+
+        private void BuscarUsuario(string Filtro = "")
+        {
+
+            ListaUsuarios = new DataTable();
+
+            ListaUsuarios = MiUsuarioLocal.BuscarUsuario(true, Filtro);
+
+            DgvListaUsuarios.DataSource = ListaUsuarios;
+
+            DgvListaUsuarios.ClearSelection();
+
+        }
+
+
+        private void TrmBuscar_Tick(object sender, EventArgs e)
+        {
+            TrmBuscar.Enabled = false;
+
+            if (!string.IsNullOrEmpty(TxtBuscar.Text.Trim()))
+            {
+                string Filtro = TxtBuscar.Text.Trim();
+
+                BuscarUsuario(Filtro);
+
+            }
+            else
+            {
+
+                BuscarUsuario();
+            }
+        }
+
+        private void TxtBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            TrmBuscar.Enabled = false;
+        }
+
+        private void TxtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            TrmBuscar.Enabled = true;
         }
     }
 

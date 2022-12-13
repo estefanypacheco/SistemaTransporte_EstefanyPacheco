@@ -76,7 +76,6 @@ namespace SistemaTransporte.Formularios
             }
 
 
-            TmrEstablecerFechaHora.Enabled = true;
 
         }
 
@@ -143,10 +142,6 @@ namespace SistemaTransporte.Formularios
             ObjetosGlobales.FrmSobreSistema.Show();
         }
 
-        private void TmrEstablecerFechaHora_Tick(object sender, EventArgs e)
-        {
-            LblFechaHora.Text = DateTime.Now.ToLongDateString() + "" + DateTime.Now.ToShortTimeString();
-        }
 
         private void MnuFacturar_Click(object sender, EventArgs e)
         {

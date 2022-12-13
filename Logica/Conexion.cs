@@ -80,11 +80,16 @@ namespace Logica
                 }
                 SqlDataAdapter MyAdaptador = new SqlDataAdapter(MyComando);
 
-                MyAdaptador.Fill(Retorno);
+
                 if (CargarEsquema)
                 {
                     MyAdaptador.FillSchema(Retorno, SchemaType.Source);
                 }
+                else
+                {
+                    MyAdaptador.Fill(Retorno);
+                }
+
             }
             return Retorno;
         }
@@ -120,9 +125,6 @@ namespace Logica
             this.CnnString = ConfigurationManager.ConnectionStrings["CNNSTR"].ToString();
 
         }
-
-    
-
 
 }
 }
